@@ -14,3 +14,6 @@
           - aborted
         skipSubagents: true
         onlyMostRecent: false
+        forceModel:
+          provider: opencode-go
+          model: deepseek-v4-flash
