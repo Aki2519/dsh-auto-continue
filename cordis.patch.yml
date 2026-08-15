@@ -1,0 +1,16 @@
+# dsh-auto-continue 插件自身的 patch 层。安装后该文件进入 web profile 的
+# bundles 层(见 package.json 的 dsh.bundle.patch),应用顺序在所有内置 bundle 之后、
+# 用户 patch 之前。
+- insert:
+    - id: dsh-auto-continue
+      name: dsh-auto-continue
+      config:
+        enabled: true
+        prompt: 系统刚刚重启。请从上次中断的地方继续完成任务,并在完成后简要汇报。
+        continueOn:
+          - interrupted
+          - error
+          - max-tokens
+          - aborted
+        skipSubagents: true
+        onlyMostRecent: false
