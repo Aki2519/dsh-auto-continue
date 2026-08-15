@@ -1,9 +1,9 @@
 {
   "name": "dsh-auto-continue",
-  "version": "0.2.0",
+  "version": "0.4.0",
   "private": true,
   "type": "module",
-  "description": "重启后自动继续未完成的任务：host 启动时找到最近一个未完成的会话并注入“继续”消息；web UI 弹出可见提示",
+  "description": "重启后自动继续未完成的任务：host 启动时自动修复被并发写损坏的会话日志，并找到最近未完成的会话注入“继续”消息；web UI 弹出可见提示",
   "main": "lib/index.js",
   "exports": {
     ".": "./lib/index.js",
@@ -18,6 +18,9 @@
       "platform": "web",
       "inject": ["sessions"]
     }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-session": "*"
   },
   "license": "MIT"
 }
